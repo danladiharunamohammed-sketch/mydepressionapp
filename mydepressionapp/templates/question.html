@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question {{ q_num }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8f9fa; padding: 20px; }
+    .progress { height: 8px; margin-bottom: 20px; }
+    .card { max-width: 500px; margin: auto; }
+    .btn { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card p-4">
+    <div class="progress">
+      <div class="progress-bar" style="width: {{ progress }}%"></div>
+    </div>
+    <h5>Question {{ q_num }} of 10</h5>
+    <p class="lead">{{ question }}</p>
+    <form method="POST">
+      {% for opt in options %}
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="answer" value="{{ opt }}" required>
+        <label class="form-check-label">{{ opt }}</label>
+      </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary w-100 mt-3">NEXT</button>
+    </form>
+  </div>
+</body>
+</html>
