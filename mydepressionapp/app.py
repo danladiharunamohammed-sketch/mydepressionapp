@@ -97,7 +97,3 @@ def predict():
     
     session.clear()
     return render_template('result.html', score=score, alert=alert, msg=msg)
-
-
-
-app.run(debug=True)
