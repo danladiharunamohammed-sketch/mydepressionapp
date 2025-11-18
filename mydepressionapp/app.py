@@ -98,6 +98,6 @@ def predict():
     session.clear()
     return render_template('result.html', score=score, alert=alert, msg=msg)
 
-if __name__ == '_main_':
-    print("Attempting to run Flask app...")
+
+
 app.run(debug=True)
